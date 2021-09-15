@@ -1,0 +1,11 @@
+server:
+  port: 6500
+spring:
+  application:
+    name: dora-admin
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          user.name: ${spring.security.user.name}
+          user.password: ${spring.security.user.password}
