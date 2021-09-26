@@ -2,14 +2,14 @@ version: '3'
 services:
   mysql:
     image: mysql:latest
-    container_name: my_mysql
+    container_name: dora_mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     volumes:
       - /D/Code/data/mysql/data:/var/lib/mysql
     ports:
-      - "3306:3306"
-      - "33060:33060"
+      - "13306:3306"
+      - "13060:33060"
     environment:
       MYSQL_ROOT_PASSWORD: "123456"
       MYSQL_DATABASE: nacos
@@ -17,7 +17,7 @@ services:
       MYSQL_PASSWORD: nacos
   nacos:
     image: nacos/nacos-server:latest
-    container_name: my_nacos
+    container_name: dora_nacos
     restart: always
     env_file:
       - ./env/nacos-mysql.env
@@ -25,24 +25,30 @@ services:
       - /D/Code/data/nacos/standalone-logs/:/home/nacos/logs
       - /D/Code/data/nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
     ports:
-      - "8848:8848"
-      - "9848:9848"
-      - "9555:9555"
+      - "18848:8848"
+      - "19848:9848"
+      - "19555:9555"
     depends_on:
       - mysql
   sentinel:
     image: bladex/sentinel-dashboard:latest
-    container_name: my_sentinel
+    container_name: dora_sentinel
     restart: always
     ports:
-      - "8858:8858"
+      - "18858:8858"
   postgres:
     image: postgres
-    container_name: my_postgres
+    container_name: dora_postgres
     restart: always
     volumes:
       - /D/code/data/postgresql/data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "15432:5432"
     environment:
       POSTGRES_PASSWORD: "123456"
+  redis:
+    image: redis
+    container_name: dora_redis
+    restart: always
+    ports:
+      - "16379:6379"
