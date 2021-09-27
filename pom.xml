@@ -16,12 +16,17 @@
         <spring-boot-dependencies.version>2.5.4</spring-boot-dependencies.version>
         <spring-cloud-dependencies.version>2020.0.3</spring-cloud-dependencies.version>
         <spring-boot-admin.version>2.5.1</spring-boot-admin.version>
+        <mybatis-plus-boot-starter.version>3.4.3.4</mybatis-plus-boot-starter.version>
+        <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
+        <guava.version>31.0-jre</guava.version>
+        <velocity-engine-core.version>2.3</velocity-engine-core.version>
     </properties>
 
     <modules>
         <module>dora-commons</module>
         <module>dora-auth</module>
         <module>dora-monitor</module>
+        <module>dora-business</module>
     </modules>
 
     <dependencyManagement>
@@ -53,6 +58,29 @@
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-server</artifactId>
                 <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
