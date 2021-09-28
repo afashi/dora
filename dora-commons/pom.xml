@@ -15,6 +15,7 @@
     <modules>
         <module>dora-common-core</module>
         <module>dora-common-db</module>
+        <module>dora-common-swagger</module>
     </modules>
 
 </project>

@@ -25,7 +25,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
             this.strictInsertFill(metaObject, CREATE_BY_COLUMN, LocalDateTime::now, LocalDateTime.class);
         }
         this.strictInsertFill(metaObject, CREATE_TIME_COLUMN, LocalDateTime::now, LocalDateTime.class);
-        updateFill(metaObject);
     }
 
     @Override
