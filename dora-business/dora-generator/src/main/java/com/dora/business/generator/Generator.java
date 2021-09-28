@@ -32,27 +32,27 @@ public class Generator {
                 new DataSourceConfig.Builder("jdbc:postgresql://localhost:15432/dora", "dora", "dora")
                         .schema("dora"))
                 .globalConfig(builder -> {
-                    builder.author("zhou") // 设置作者
-                            .enableSwagger() // 开启 swagger 模式
-                            .fileOverride()// 覆盖已生成文件
+                    builder.author("zhou")
+                            .enableSwagger()
+                            .fileOverride()
                             .disableOpenDir()
-                            .outputDir(DIRECTION); // 指定输出目录
+                            .outputDir(DIRECTION);
                 })
                 .packageConfig(builder -> {
-                    builder.parent("com.dora.business") // 设置父包名
-                            .moduleName("system")// 设置父包模块名
-                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, MAPPER_DIRECTION)); // 设置mapperXml生成路径
+                    builder.parent("com.dora.business")
+                            .moduleName("system")
+                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, MAPPER_DIRECTION));
                 })
                 .templateConfig(builder -> {
                     builder.disable(TemplateType.CONTROLLER);
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude(TABLE_LIST) // 设置需要生成的表名
+                    builder.addInclude(TABLE_LIST)
                             .addTablePrefix(TABLE_PREFIX)
 
                             .entityBuilder()
                             .superClass(SuperEntity.class)
-                            .addSuperEntityColumns("create_time","update_time")
+                            .addSuperEntityColumns("create_time", "update_time")
                             .logicDeleteColumnName("deleted")
                             .enableLombok()
                             .enableChainModel()

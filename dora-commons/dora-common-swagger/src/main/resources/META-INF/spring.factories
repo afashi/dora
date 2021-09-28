@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.dora.common.mybatis.config.MybatisPlusConfig
+com.dora.common.swagger.config.SwaggerConfig

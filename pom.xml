@@ -28,6 +28,7 @@
         <module>dora-auth</module>
         <module>dora-monitor</module>
         <module>dora-business</module>
+        <module>dora-gateway</module>
     </modules>
 
     <dependencyManagement>
@@ -78,10 +79,14 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
                 <version>${knife4j-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
