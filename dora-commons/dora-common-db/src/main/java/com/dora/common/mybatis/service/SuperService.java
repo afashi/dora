@@ -1,4 +1,4 @@
-package com.dora.common.mybatis.service.impl;
+package com.dora.common.mybatis.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 

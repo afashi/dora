@@ -22,7 +22,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName("sys_user")
 @ApiModel(value = "User对象", description = "")
-public class User extends SuperEntity<User> {
+public class User extends SuperEntity {
 
     private static final long serialVersionUID = 1L;
 

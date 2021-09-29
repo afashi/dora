@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.generator.config.TemplateType;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.dora.common.mybatis.entity.SuperEntity;
 import com.dora.common.mybatis.mapper.SuperMapper;
-import com.dora.common.mybatis.service.impl.SuperService;
+import com.dora.common.mybatis.service.SuperService;
 import com.dora.common.mybatis.service.impl.SuperServiceImpl;
 
 import java.util.Collections;

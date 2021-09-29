@@ -37,13 +37,13 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "${entity}对象", description = "${table.comment!}")
 </#if>
 <#if superEntityClass??>
-public class ${entity} extends ${superEntityClass}<${entity}><#if activeRecord><${entity}></#if> {
+    public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> {
 <#elseif activeRecord>
-public class ${entity} extends Model<${entity}> {
+    public class ${entity} extends Model<${entity}> {
 <#elseif entitySerialVersionUID>
-public class ${entity} implements Serializable {
+    public class ${entity} implements Serializable {
 <#else>
-public class ${entity} {
+    public class ${entity} {
 </#if>
 <#if entitySerialVersionUID>
 

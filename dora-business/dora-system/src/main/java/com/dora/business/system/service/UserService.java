@@ -1,7 +1,7 @@
 package com.dora.business.system.service;
 
 import com.dora.business.system.entity.User;
-import com.dora.common.mybatis.service.impl.SuperService;
+import com.dora.common.mybatis.service.SuperService;
 
 /**
  * <p>
