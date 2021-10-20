@@ -3,20 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>dora</artifactId>
+        <artifactId>dora-commons</artifactId>
         <groupId>com.zhou</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dora-commons</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>dora-common-log</artifactId>
 
-    <modules>
-        <module>dora-common-core</module>
-        <module>dora-common-db</module>
-        <module>dora-common-swagger</module>
-        <module>dora-common-log</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+    </dependencies>
 </project>
