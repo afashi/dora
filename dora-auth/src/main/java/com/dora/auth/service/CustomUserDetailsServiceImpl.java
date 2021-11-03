@@ -13,7 +13,7 @@ import java.util.HashSet;
  * @date 2021/9/29
  */
 @Service("userDetailsService")
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsServiceImpl implements UserDetailsService {
     /**
      * 角色前缀
      */
@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserFeignClient userFeignClient;
 
-    public CustomUserDetailsService(UserFeignClient userFeignClient) {
+    public CustomUserDetailsServiceImpl(UserFeignClient userFeignClient) {
         this.userFeignClient = userFeignClient;
     }
 
