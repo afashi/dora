@@ -1,7 +1,8 @@
 version: '3'
 services:
-  mysql:
+  dora_mysql:
     image: mysql:latest
+    hostname: mysql
     container_name: dora_mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -15,7 +16,7 @@ services:
       MYSQL_DATABASE: nacos
       MYSQL_USER: nacos
       MYSQL_PASSWORD: nacos
-  nacos:
+  dora_nacos:
     image: nacos/nacos-server:latest
     container_name: dora_nacos
     restart: always
@@ -30,13 +31,13 @@ services:
       - "19555:9555"
     depends_on:
       - mysql
-  sentinel:
+  dora_sentinel:
     image: bladex/sentinel-dashboard:latest
     container_name: dora_sentinel
     restart: always
     ports:
       - "18858:8858"
-  postgres:
+  dora_postgres:
     image: postgres
     container_name: dora_postgres
     restart: always
@@ -46,9 +47,16 @@ services:
       - "15432:5432"
     environment:
       POSTGRES_PASSWORD: "123456"
-  redis:
+  dora_redis:
     image: redis
     container_name: dora_redis
     restart: always
     ports:
       - "16379:6379"
+  dora_rabbitmq:
+    image: rabbitmq:3-management
+    container_name: dora_rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
